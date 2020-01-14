@@ -30,21 +30,21 @@
               k86,                                \
               k66, k75, k65                       \
 ) {                                              \
-    { k00,  k01,  k02,  k03,  ___,  ___,  ___ }, \
-    { k10,  k11,  k12,  k13,  k14,  ___,  ___ }, \
-    { k20,  k21,  k22,  k23,  k24,  k25,  ___ }, \
-    { k30,  k31,  k32,  k33,  k34,  k35,  k36 }, \
-    { k40,  k41,  k42,  k43,  ___,  ___,  k46 }, \
-    { k50,  k51,  k52,  k53,  k54,  k55,  k56 }, \
-    { k60,  k61,  k62,  k63,  k64,  k65,  k66 }, \
-    { k70,  k71,  k72,  k73,  ___,  k75,  ___ }, \
-    { k80,  k81,  k82,  k83,  k84,  k85,  k86 }, \
-    { k90,  k91,  k92,  k93,  k94,  ___,  k96 }, \
-    { kA0,  kA1,  kA2,  kA3,  kA4,  ___,  ___ }, \
-    { kB0,  kB1,  kB2,  kB3,  ___,  ___,  ___ }, \
-    { kC0,  kC1,  kC2,  kC3,  kC4,  kC5,  ___ }, \
-    { kD0,  kD1,  kD2,  kD3,  kD4,  kD5,  ___ }, \
-    { kE0,  kE1,  kE2,  kE3,  kE4,  kE5,  ___ } \
+        { KC_##k00, KC_##k01, KC_##k02, KC_##k03, KC_NO,    KC_NO,    KC_NO      }, \
+        { KC_##k10, KC_##k11, KC_##k12, KC_##k13, KC_##k14, KC_NO,    KC_NO      }, \
+        { KC_##k20, KC_##k21, KC_##k22, KC_##k23, KC_##k24, KC_##k25, KC_NO      }, \
+        { KC_##k30, KC_##k31, KC_##k32, KC_##k33, KC_##k34, KC_##k35, KC_##k36   }, \
+        { KC_##k40, KC_##k41, KC_##k42, KC_##k43, KC_NO,    KC_NO,    KC_##k46   }, \
+        { KC_##k50, KC_##k51, KC_##k52, KC_##k53, KC_##k54, KC_##k55, KC_##k56   }, \
+        { KC_##k60, KC_##k61, KC_##k62, KC_##k63, KC_##k64, KC_##k65, KC_##k66   }, \
+        { KC_##k70, KC_##k71, KC_##k72, KC_##k73, KC_NO,    KC_##k75, KC_NO      }, \
+        { KC_##k80, KC_##k81, KC_##k82, KC_##k83, KC_##k84, KC_##k85, KC_##k86   }, \
+        { KC_##k90, KC_##k91, KC_##k92, KC_##k93, KC_##k94, KC_NO,    KC_##k96   }, \
+        { KC_##kA0, KC_##kA1, KC_##kA2, KC_##kA3, KC_##kA4, KC_NO,    KC_NO      }, \
+        { KC_##kB0, KC_##kB1, KC_##kB2, KC_##kB3, KC_NO,    KC_NO,    KC_NO      }, \
+        { KC_##kC0, KC_##kC1, KC_##kC2, KC_##kC3, KC_##kC4, KC_##kC5, KC_NO      }, \
+        { KC_##kD0, KC_##kD1, KC_##kD2, KC_##kD3, KC_##kD4, KC_##kD5, KC_NO      }, \
+        { KC_##kE0, KC_##kE1, KC_##kE2, KC_##kE3, KC_##kE4, KC_##kE5, KC_NO      } \
 }
 
 /*  ---------------- LEFT HAND -----------------   ---------------- RIGHT HAND ---------------- */
@@ -59,22 +59,21 @@
                                   k35,                  k86,                                     \
                         k36, k46, k25,                  k66, k75, k65                            \
 ) {                                              \
-    { k00,  k01,  k02,  k03,  ___,  ___,  ___ }, \
-    { k10,  k11,  k12,  k13,  k14,  ___,  ___ }, \
-    { k20,  k21,  k22,  k23,  k24,  k25,  ___ }, \
-    { k30,  k31,  k32,  k33,  k34,  k35,  k36 }, \
-    { k40,  k41,  k42,  k43,  ___,  ___,  k46 }, \
-    { k50,  k51,  k52,  k53,  k54,  k55,  k56 }, \
-    { k60,  k61,  k62,  k63,  k64,  k65,  k66 }, \
-    { k70,  k71,  k72,  k73,  ___,  k75,  ___ }, \
-    { k80,  k81,  k82,  k83,  k84,  k85,  k86 }, \
-    { k90,  k91,  k92,  k93,  k94,  ___,  k96 }, \
-    { kA0,  kA1,  kA2,  kA3,  kA4,  ___,  ___ }, \
-    { kB0,  kB1,  kB2,  kB3,  ___,  ___,  ___ }, \
-    { kC0,  kC1,  kC2,  kC3,  kC4,  kC5,  ___ }, \
-    { kD0,  kD1,  kD2,  kD3,  kD4,  kD5,  ___ }, \
-    { kE0,  kE1,  kE2,  kE3,  kE4,  kE5,  ___ }  \
-}
+        { KC_##k00, KC_##k01, KC_##k02, KC_##k03, KC_NO,    KC_NO,    KC_NO      }, \
+        { KC_##k10, KC_##k11, KC_##k12, KC_##k13, KC_##k14, KC_NO,    KC_NO      }, \
+        { KC_##k20, KC_##k21, KC_##k22, KC_##k23, KC_##k24, KC_##k25, KC_NO      }, \
+        { KC_##k30, KC_##k31, KC_##k32, KC_##k33, KC_##k34, KC_##k35, KC_##k36   }, \
+        { KC_##k40, KC_##k41, KC_##k42, KC_##k43, KC_NO,    KC_NO,    KC_##k46   }, \
+        { KC_##k50, KC_##k51, KC_##k52, KC_##k53, KC_##k54, KC_##k55, KC_##k56   }, \
+        { KC_##k60, KC_##k61, KC_##k62, KC_##k63, KC_##k64, KC_##k65, KC_##k66   }, \
+        { KC_##k70, KC_##k71, KC_##k72, KC_##k73, KC_NO,    KC_##k75, KC_NO      }, \
+        { KC_##k80, KC_##k81, KC_##k82, KC_##k83, KC_##k84, KC_##k85, KC_##k86   }, \
+        { KC_##k90, KC_##k91, KC_##k92, KC_##k93, KC_##k94, KC_NO,    KC_##k96   }, \
+        { KC_##kA0, KC_##kA1, KC_##kA2, KC_##kA3, KC_##kA4, KC_NO,    KC_NO      }, \
+        { KC_##kB0, KC_##kB1, KC_##kB2, KC_##kB3, KC_NO,    KC_NO,    KC_NO      }, \
+        { KC_##kC0, KC_##kC1, KC_##kC2, KC_##kC3, KC_##kC4, KC_##kC5, KC_NO      }, \
+        { KC_##kD0, KC_##kD1, KC_##kD2, KC_##kD3, KC_##kD4, KC_##kD5, KC_NO      }, \
+        { KC_##kE0, KC_##kE1, KC_##kE2, KC_##kE3, KC_##kE4, KC_##kE5, KC_NO      } \
 
 /*
 This is the Stapelberg matrix as published at

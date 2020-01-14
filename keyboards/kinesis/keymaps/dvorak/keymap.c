@@ -1,59 +1,107 @@
 #include QMK_KEYBOARD_H
 
 #define _DVORAK 0 // Base Dvorak layer
-#define _MEDIA 1  // Media layer
+#define _NUM 1 // Number Layer
+#define _MEDIA 2  // Media layer
+
+#define KC_XXXX KC_NO
+#define KC_ KC_TRNS 
+#define KC_TMED MO(_MEDIA)
+#define KC_TNUM MO(_NUM)
+#define KC_ALLU LSFT(LCTL(KC_UP))
+#define KC_ALLL LSFT(LCTL(KC_LEFT))
+#define KC_ALLR LSFT(LCTL(KC_RIGHT))
+#define KC_ALLD LSFT(LCTL(KC_DOWN))
+#define KC_COPY LCTL(KC_C)
+#define KC_PST LCTL(KC_V)
+#define KC_CUT LCTL(KC_X)
+#define KC_CALD LCTL(LALT(KC_DEL))
+#define KC_WINL LGUI(KC_LEFT)
+#define KC_WINR LGUI(KC_RIGHT)
+#define KC_WINU LGUI(KC_UP)
+#define KC_WIND LGUI(KC_DOWN)
+#define KC_LOCK LGUI(KC_L)
+#define KC_PDFL LSFT(LCTL(KC_TAB))
+#define KC_PDFR LCTL(KC_TAB)
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_DVORAK] = LAYOUT(
         // left hand
-        KC_ESC,   KC_F1,   KC_F2,   KC_F3,   KC_F4,  KC_F5, KC_F6, KC_F7, KC_F8,
-        KC_GRV,   KC_1,    KC_2,    KC_3,    KC_4,   KC_5,
-        KC_TAB,   KC_QUOT, KC_COMM, KC_DOT,  KC_P,   KC_Y,
-        KC_BSPC,  KC_A,    KC_O,    KC_E,    KC_U,   KC_I,
-        KC_LSFT,  KC_SCLN, KC_Q,    KC_J,    KC_K,   KC_X,
-                  KC_ESC,  KC_LBRC, KC_DOWN, KC_UP,
+         ESC,    F1,  F2,   F3,   F4,   F5,   F6,   F7,   F8,
+        WINL,    1,    2,    3,    4,    5,
+        MINS, QUOT, COMM,  DOT,    P,    Y,
+         TAB,    A,    O,    E,    U,    I,
+        LCTL, SCLN,    Q,    J,    K,    X,
+              WINU,  GRV,  DEL, BSPC,
         // left thumb
-                            KC_LGUI, KC_LCTL,
-                                     KC_LALT,
-                   KC_BSPC, KC_DEL,  TG(_MEDIA),
+                              LSFT, LGUI,
+                                    PGUP,
+                        LSFT, TMED, PGDN,
         // right hand
-        KC_F9,  KC_F10,   KC_F11,   KC_F12,   KC_PSCR, KC_SLCK, KC_PAUS, KC_FN0, KC_1,
-        KC_6,   KC_7,     KC_8,     KC_9,     KC_0,    KC_EQL,
-        KC_F,   KC_G,     KC_C,     KC_R,     KC_L,    KC_SLSH,
-        KC_D,   KC_H,     KC_T,     KC_N,     KC_S,    KC_MINS,
-        KC_B,   KC_M,     KC_W,     KC_V,     KC_Z,    KC_RSFT,
-                          KC_LEFT,  KC_RIGHT, KC_RBRC, KC_BSLS,
+          F9,  F10,  F11,  F12, CALD,  INS,  F23,  F24, CAPS,
+           6,    7,    8,    9,    0, WINR,
+           F,    G,    C,    R,    L,  EQL,
+           D,    H,    T,    N,    S, SLSH,
+           B,    M,    W,    V,    Z, LALT,
+               ENT, LBRC, RBRC, BSLS,
         // right thumb
-        KC_RCTL,    KC_RGUI,
-        KC_RALT,
-        TG(_MEDIA), KC_ENT, KC_SPC
+        VOLD, VOLU,
+        END,
+        HOME, TNUM,  SPC
+    ),
+
+[_NUM] = LAYOUT(
+        // left hand
+            ,     ,     ,     ,     ,     ,     ,     ,     ,
+            ,     ,     ,     ,     ,     ,
+            ,     ,     ,     ,     ,     ,
+        MINS,    1,    2,    3,    4,    5,
+            , EXLM,   AT,  HASH,  DLR, PERC,
+                  ,     ,     ,     ,
+        // left thumb
+                                  ,     ,
+                                        ,
+                            ,     ,     ,
+        // right hand
+            ,     ,     ,     ,     ,     ,     ,     ,     ,
+            ,     ,     ,     ,     ,     ,
+            ,     ,     ,     ,     ,     ,
+           6,    7,    8,    9,    0,     ,
+        CIRC, AMPR, ASTR, LPRN, RPRN,     ,
+                  ,     ,     ,     ,
+        // right thumb
+            ,     ,
+            ,
+            ,     ,     
     ),
 
 [_MEDIA] = LAYOUT(
        // left hand
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_NO,   KC_BTN4, KC_BTN3, KC_BTN2, KC_BTN1, KC_NO,
-       KC_NO,   KC_NO,   KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,
-                KC_NO,   KC_NO,   KC_MS_D, KC_MS_U,
+           ,     ,     ,     ,     ,     ,     ,     ,     ,
+           ,     ,     ,     ,     ,     ,
+           ,  CUT, ALLL, ALLD, ALLU, ALLR,
+           ,  PST, LEFT, DOWN, UP,   RGHT,
+           , COPY, HOME, PGDN, PGUP, END,
+                 ,     , PDFL, PDFR,
         // left thumb
-                                           KC_NO,   KC_NO,
-                                                    KC_NO,
-                                  KC_NO,   KC_NO,   KC_TRNS,
+                                               ,     ,
+                                                     ,
+                                         ,     ,     ,
        // right hand
-       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_POWER,
-       KC_NO,   KC_VOLU, KC_MS_U, KC_VOLD, KC_NO,   KC_NO,
-       KC_NO,   KC_MS_L, KC_MS_D, KC_MS_R, KC_NO,   KC_NO,
-       KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO,
-                KC_MS_L, KC_MS_R, KC_NO,   KC_NO,
+           ,     ,     ,     ,     ,     ,     ,     ,     ,
+           ,     ,     ,     ,     ,     ,
+           ,     ,     ,     ,     ,     ,
+           ,     ,     ,     ,     ,     ,
+           ,     ,     ,     ,     ,     ,
+                 ,     ,     ,     ,
        // right thumb
-       KC_NO, KC_NO,
-       KC_NO,
-       KC_TRNS, KC_ENT, KC_NO
+           ,     ,
+           ,
+           ,     ,    
 )
 };
+
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
